@@ -40,7 +40,7 @@ namespace LightBuzz.Encryption
     /// <summary>
     /// Implements the MD5 encryption algorithm.
     /// </summary>
-    public sealed class MD5Encryption : IEncryption
+    public sealed class Encryption : IEncryption
     {
         /// <summary>
         /// The default encryption password.
@@ -48,13 +48,23 @@ namespace LightBuzz.Encryption
         readonly string DEFAULT_PASSWORD = "Pa$$w0rd";
 
         /// <summary>
+        /// The default algorith name.
+        /// </summary>
+        readonly string DEFAULT_ALGORITHM = HashAlgorithmNames.Sha256;
+
+        /// <summary>
         /// Creates a new instance of the encryption provider.
         /// </summary>
-        public MD5Encryption()
+        public Encryption()
         {
             if (Password == null)
             {
                 Password = DEFAULT_PASSWORD;
+            }
+
+            if (Algorithm == null)
+            {
+                Algorithm = DEFAULT_ALGORITHM;
             }
         }
 
@@ -62,6 +72,11 @@ namespace LightBuzz.Encryption
         /// The encryption password.
         /// </summary>
         public string Password { get; set; }
+
+        /// <summary>
+        /// The encryption algorithm.
+        /// </summary>
+        public string Algorithm { get; set; }
 
         /// <summary>
         /// Encrypts the specified text.
@@ -112,7 +127,7 @@ namespace LightBuzz.Encryption
         /// <returns>The cryptographic key.</returns>
         private CryptographicKey GenerateKey()
         {
-            HashAlgorithmProvider algorithm = HashAlgorithmProvider.OpenAlgorithm(HashAlgorithmNames.Md5);
+            HashAlgorithmProvider algorithm = HashAlgorithmProvider.OpenAlgorithm(Algorithm);
             CryptographicHash cryptographicHash = algorithm.CreateHash();
             SymmetricKeyAlgorithmProvider provider = SymmetricKeyAlgorithmProvider.OpenAlgorithm(SymmetricAlgorithmNames.AesEcbPkcs7);
 
