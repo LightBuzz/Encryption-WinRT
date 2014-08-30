@@ -22,7 +22,7 @@ Import the assembly to your project and include its namespace:
 ### Decrypt a string
 *You can use this method to retrieve passwords from a database*
 	
-	string text = "Encrypted text from databse";
+	string text = "Encrypted text from database";
 
 	IEncryption encryption = new MD5Encryption();
 	string decrypted = encryption.Decrypt(text);
