@@ -9,6 +9,7 @@ You can download and build this project or simply install it via NuGet:
 
 ## Examples
 Import the assembly to your project and include its namespace:
+	
 	using LightBuzz.Encryption;
 
 ### Encrypt a string
