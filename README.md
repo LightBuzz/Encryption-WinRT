@@ -32,4 +32,4 @@ Import the assembly to your project and include its namespace:
 * [Vangos Pterneas](http://pterneas.com) from [LightBuzz](http://lightbuzz.com)
 
 ## License
-You are free to use these libraries in personal and commercial projects by attributing the original creator of the project.
+You are free to use these libraries in personal and commercial projects by attributing the original creator of the project. [View full License](https://github.com/LightBuzz/Encryption-WinRT/blob/master/LICENSE).
