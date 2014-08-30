@@ -4,6 +4,7 @@ An MD5 encryption provider for WinRT apps. Supports Windows Phone and Windows 8/
 
 ## Installation
 You can download and build this project or simply install it via NuGet:
+	
 	PM> Install-Package encryption-winrt
 
 ## Examples
@@ -12,6 +13,7 @@ Import the assembly to your project and include its namespace:
 
 ### Encrypt a string
 *You can use this method to store passwords into a database*
+	
 	string text = "This is plain text";
 
 	IEncryption encryption = new MD5Encryption();
@@ -19,6 +21,7 @@ Import the assembly to your project and include its namespace:
 
 ### Decrypt a string
 *You can use this method to retrieve passwords from a database*
+	
 	string text = "Encrypted text from databse";
 
 	IEncryption encryption = new MD5Encryption();
